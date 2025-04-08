@@ -45,6 +45,7 @@ resource "aws_instance" "web_server" {
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.ec2_key.key_name
   security_groups = [aws_security_group.web_sg.name]
+  associate_public_ip_address = true
 
   # 인스턴스 시작 시 Nginx 설치
   user_data = <<-EOF
