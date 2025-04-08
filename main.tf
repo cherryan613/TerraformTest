@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "ap-northeast-2" # 서울 리전
-}
-
 # 보안 그룹 설정
 resource "aws_security_group" "web_sg" {
   name_prefix = "web-sg-"
