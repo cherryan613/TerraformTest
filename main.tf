@@ -35,7 +35,7 @@ resource "tls_private_key" "example" {
 
 # AWS 키 페어 생성
 resource "aws_key_pair" "ec2_key" {
-  key_name   = "ec2-key"
+  key_name   = "ec2-key-${substr(uuid(), 0, 8)}"
   public_key = tls_private_key.example.public_key_openssh
 }
 
